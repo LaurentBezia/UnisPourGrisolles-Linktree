@@ -1,74 +1,110 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unis pour Grisolles - Liens</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #2f4a87; /* couleur du logo */
-      color: white;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    img.logo {
-      width: 150px;
-      height: auto;
-      margin-bottom: 20px;
-      border-radius: 50%;
-    }
-    h1 {
-      font-size: 22px;
-      margin-bottom: 15px;
-    }
-    .description {
-      font-size: 15px;
-      line-height: 1.5;
-      margin-bottom: 25px;
-      white-space: pre-line; /* pour respecter les retours à la ligne */
-    }
-    .link {
-      display: block;
-      background: white;
-      color: #2f4a87;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 15px;
-      border-radius: 30px;
-      margin: 15px 0;
-      transition: 0.3s;
-    }
-    .link:hover {
-      background: #f9a825; /* accent couleur */
-      color: white;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unis pour Grisolles - Liens</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #2f4a87; /* couleur du logo */
+color: white;
+text-align: center;
+margin: 0;
+padding: 0;
+}
+.container {
+max-width: 400px;
+margin: 0 auto;
+padding: 40px 20px;
+}
+img.logo {
+width: 150px;
+height: auto;
+margin-bottom: 20px;
+border-radius: 50%;
+}
+h1 {
+font-size: 22px;
+margin-bottom: 15px;
+}
+.description {
+font-size: 15px;
+line-height: 1.5;
+margin-bottom: 25px;
+white-space: pre-line; /* pour respecter les retours à la ligne */
+}
+.link {
+display: flex;
+align-items: center; /* alignement vertical centré */
+justify-content: center;
+gap: 10px;
+background: white;
+color: #2f4a87;
+text-decoration: none;
+font-weight: bold;
+padding: 15px;
+border-radius: 30px;
+margin: 15px 0;
+transition: 0.3s;
+}
+.link img.icon {
+width: 30px;
+height: 30px;
+display: inline-block;
+border-radius: 8px; /* coins arrondis discrets */
+box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* ombre douce */
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.link:hover img.icon {
+transform: scale(1.05);
+box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+.link span {
+display: inline-block;
+line-height: 30px; /* même hauteur que l’icône pour parfait centrage */
+}
+.link:hover {
+background: #f9a825; /* accent couleur */
+color: white;
+}
+img.fond {
+width: 100%;
+max-width: 350px;
+height: auto;
+margin: 30px auto 0;
+display: block;
+}
+</style>
 </head>
 <body>
-  <div class="container">
-    <img src="logo-rond.png" alt="Unis pour Grisolles" class="logo">
-    <h1>Unis pour Grisolles</h1>
+<div class="container">
+<img src="logo-rond.png" alt="Unis pour Grisolles" class="logo">
+<h1>Unis pour Grisolles</h1>
 
-    <!-- Descriptif ajouté -->
-    <p class="description">
+
+<!-- Descriptif ajouté -->
+<p class="description">
 Avec Vous, construisons la ville de demain !
 Liste municipale 2026
 🤝Une partie de la Majorité + une partie de l’Opposition = UNE LISTE COMMUNE
 menée par Géraud Saint-Sernin
 ✍️ unispourgrisolles@gmail.com
-    </p>
+</p>
 
-    <!-- Liens -->
-    <a href="https://www.unispourgrisolles.fr" class="link" target="_blank">🌐 Site officiel</a>
-    <a href="https://www.instagram.com/unispourgrisolles/" class="link" target="_blank">📸 Instagram</a>
-    <a href="https://www.facebook.com/profile.php?id=61575721827167" class="link" target="_blank">📘 Facebook</a>
-  </div>
+
+<!-- Liens -->
+<a href="https://www.unispourgrisolles.fr" class="link" target="_blank">🌐 Site officiel</a>
+<a href="https://www.instagram.com/unispourgrisolles/" class="link" target="_blank">
+<img src="insta.png" alt="Instagram" class="icon"> <span>Instagram</span>
+</a>
+<a href="https://www.facebook.com/profile.php?id=61575721827167" class="link" target="_blank">
+<img src="facebook.png" alt="Facebook" class="icon"> <span>Facebook</span>
+</a>
+
+
+<!-- Image de fond en bas -->
+<img src="fond.png" alt="Illustration de Grisolles" class="fond">
+</div>
 </body>
 </html>
