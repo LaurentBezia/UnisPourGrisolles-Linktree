@@ -12,7 +12,6 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth; /* scroll fluide pour le bouton */
 }
 .container {
     max-width: 400px;
@@ -79,23 +78,8 @@ img.fond {
     margin: 30px auto 0;
     display: block;
 }
-.mentions-legales {
-    background: rgba(255,255,255,0.9);
-    color: #000;
-    font-size: 12px;
-    line-height: 1.4;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 20px auto;
-    text-align: left;
-    max-width: 400px;
-}
-.mentions-legales a {
-    color: #2f4a87;
-    text-decoration: underline;
-}
 
-/* Bouton flottant Mentions légales */
+/* Bouton flottant */
 #btn-mentions {
     position: fixed;
     bottom: 20px;
@@ -103,16 +87,58 @@ img.fond {
     background: #f9a825;
     color: #000;
     border: none;
-    padding: 12px 18px;
+    padding: 10px 16px;
     border-radius: 50px;
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
     z-index: 1000;
+    font-size: 13px;
 }
 #btn-mentions:hover {
     background: #e6b800;
+    transform: scale(1.05);
+}
+
+/* Popup modal */
+.modal {
+    display: none; /* masquée par défaut */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6); /* fond sombre */
+}
+.modal-content {
+    background-color: #fff;
+    color: #000;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    text-align: left;
+    max-height: 80%;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.modal-content a {
+    color: #2f4a87;
+    text-decoration: underline;
+}
+.close {
+    color: #333;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover {
+    color: #f00;
 }
 </style>
 <link rel="icon" href="favicon_unis_pour_grisolles.ico" type="image/x-icon">
@@ -144,9 +170,15 @@ menée par Géraud Saint-Sernin
 
     <!-- Image de fond en bas -->
     <img src="fondbleu.png" alt="Patrimoine de Grisolles" class="fond">
+</div>
 
-    <!-- Mentions légales -->
-    <div class="mentions-legales" id="mentions-legales">
+<!-- Bouton flottant -->
+<button id="btn-mentions">Mentions légales</button>
+
+<!-- Modal -->
+<div id="modal-mentions" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
         <strong>Mentions légales – Liste Unis pour Grisolles</strong><br><br>
         <strong>Page officielle :</strong> <a href="https://laurentbezia.github.io/UnisPourGrisolles-Linktree/" target="_blank">https://laurentbezia.github.io/UnisPourGrisolles-Linktree/</a><br>
         <strong>Site de campagne :</strong> <a href="https://www.unispourgrisolles.fr/" target="_blank">https://www.unispourgrisolles.fr/</a><br><br>
@@ -172,10 +204,22 @@ menée par Géraud Saint-Sernin
     </div>
 </div>
 
-<!-- Bouton flottant -->
-<button id="btn-mentions" onclick="document.getElementById('mentions-legales').scrollIntoView({behavior: 'smooth'});">
-Mentions légales
-</button>
+<script>
+// Ouvrir le modal
+document.getElementById('btn-mentions').onclick = function() {
+    document.getElementById('modal-mentions').style.display = "block";
+}
+// Fermer le modal
+document.querySelector('.close').onclick = function() {
+    document.getElementById('modal-mentions').style.display = "none";
+}
+// Fermer si clic en dehors du contenu
+window.onclick = function(event) {
+    if (event.target == document.getElementById('modal-mentions')) {
+        document.getElementById('modal-mentions').style.display = "none";
+    }
+}
+</script>
 
 </body>
 </html>
