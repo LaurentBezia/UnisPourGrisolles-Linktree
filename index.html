@@ -51,7 +51,7 @@ img.logo {
     border-radius: 30px;
     margin: 15px 0;
     transition: 0.3s;
-    position: relative; /* pour éviter que le bouton de mentions flotte dessus */
+    position: relative;
     z-index: 1;
 }
 .link img.icon {
@@ -82,22 +82,17 @@ img.fond {
     display: block;
 }
 
-/* Bouton flottant */
+/* Bouton Mentions légales sous l'image */
 #btn-mentions {
-    position: fixed;
-    bottom: 80px; /* placé au-dessus du bouton mail */
-    right: 20px;
-    background: #f9a825;
-    color: #000;
-    border: none;
+    margin-top: 15px;
     padding: 10px 16px;
     border-radius: 50px;
+    background: #f9a825;
+    color: #000;
     font-weight: bold;
+    border: none;
     cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     transition: background 0.3s, transform 0.2s;
-    z-index: 1000;
-    font-size: 13px;
 }
 #btn-mentions:hover {
     background: #e6b800;
@@ -154,8 +149,6 @@ img.fond {
     #btn-mentions {
         padding: 8px 12px;
         font-size: 11px;
-        bottom: 70px; /* ajuste le positionnement sur mobile */
-        right: 15px;
     }
 }
 </style>
@@ -187,11 +180,12 @@ menée par Géraud Saint-Sernin
         <span>Contact par mail</span>
     </a>
 
+    <!-- Image de fond en bas -->
     <img src="fondbleu.png" alt="Patrimoine de Grisolles" class="fond">
-</div>
 
-<!-- Bouton flottant -->
-<button id="btn-mentions">Mentions légales</button>
+    <!-- Bouton Mentions légales placé sous l'image -->
+    <button id="btn-mentions">Mentions légales</button>
+</div>
 
 <!-- Modal popup -->
 <div id="modal-mentions" class="modal">
