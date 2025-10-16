@@ -7,11 +7,12 @@
 <style>
 body {
     font-family: Arial, sans-serif;
-    background-color: #a3cee4; /* couleur du logo */
+    background-color: #a3cee4;
     color: white;
     text-align: center;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth; /* scroll fluide pour le bouton */
 }
 .container {
     max-width: 400px;
@@ -21,7 +22,7 @@ body {
 img.logo {
     width: 150px;
     height: auto;
-    margin-bottom: 10px; /* espace réduit avant le descriptif */
+    margin-bottom: 10px;
     border-radius: 50%;
 }
 .description {
@@ -39,7 +40,7 @@ img.logo {
 }
 .link {
     display: flex;
-    align-items: center; /* alignement vertical centré */
+    align-items: center;
     justify-content: center;
     gap: 10px;
     background: white;
@@ -55,8 +56,8 @@ img.logo {
     width: 30px;
     height: 30px;
     display: inline-block;
-    border-radius: 8px; /* coins arrondis discrets */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* ombre douce */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .link:hover img.icon {
@@ -65,10 +66,10 @@ img.logo {
 }
 .link span {
     display: inline-block;
-    line-height: 30px; /* même hauteur que l’icône pour parfait centrage */
+    line-height: 30px;
 }
 .link:hover {
-    background: #f9a825; /* accent couleur */
+    background: #f9a825;
     color: white;
 }
 img.fond {
@@ -77,6 +78,41 @@ img.fond {
     height: auto;
     margin: 30px auto 0;
     display: block;
+}
+.mentions-legales {
+    background: rgba(255,255,255,0.9);
+    color: #000;
+    font-size: 12px;
+    line-height: 1.4;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px auto;
+    text-align: left;
+    max-width: 400px;
+}
+.mentions-legales a {
+    color: #2f4a87;
+    text-decoration: underline;
+}
+
+/* Bouton flottant Mentions légales */
+#btn-mentions {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #f9a825;
+    color: #000;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: background 0.3s;
+    z-index: 1000;
+}
+#btn-mentions:hover {
+    background: #e6b800;
 }
 </style>
 <link rel="icon" href="favicon_unis_pour_grisolles.ico" type="image/x-icon">
@@ -108,6 +144,38 @@ menée par Géraud Saint-Sernin
 
     <!-- Image de fond en bas -->
     <img src="fondbleu.png" alt="Patrimoine de Grisolles" class="fond">
+
+    <!-- Mentions légales -->
+    <div class="mentions-legales" id="mentions-legales">
+        <strong>Mentions légales – Liste Unis pour Grisolles</strong><br><br>
+        <strong>Page officielle :</strong> <a href="https://laurentbezia.github.io/UnisPourGrisolles-Linktree/" target="_blank">https://laurentbezia.github.io/UnisPourGrisolles-Linktree/</a><br>
+        <strong>Site de campagne :</strong> <a href="https://www.unispourgrisolles.fr/" target="_blank">https://www.unispourgrisolles.fr/</a><br><br>
+
+        <strong>Éditeur de la page :</strong><br>
+        Candidat tête de liste : Géraud SAINT-SERNIN<br>
+        Contact : <a href="mailto:unispourgrisolles@gmail.com">unispourgrisolles@gmail.com</a><br>
+        Directeurs de publication : Laurent BEZIA et Alexandra POISSON<br><br>
+
+        <strong>Hébergement :</strong><br>
+        GitHub, Inc.<br>
+        88 Colin P Kelly Jr St, San Francisco, CA 94107, USA<br>
+        <a href="https://pages.github.com/" target="_blank">https://pages.github.com/</a><br><br>
+
+        <strong>Responsabilité éditoriale :</strong><br>
+        Le contenu publié sur cette page relève de la responsabilité du directeur de publication. Les liens vers des sites externes sont donnés à titre informatif ; la liste Unis pour Grisolles ne saurait être tenue responsable.<br><br>
+
+        <strong>Protection des données (RGPD) :</strong><br>
+        Aucune donnée personnelle n’est collectée directement via cette page. Pour tout traitement via le site officiel, consultez la <a href="https://www.unispourgrisolles.fr/" target="_blank">politique de confidentialité</a>.<br><br>
+
+        <strong>Mentions électorales :</strong><br>
+        Conformément aux articles L.48 et suivants du Code électoral, cette page constitue un support de communication de la liste Unis pour Grisolles. Toute publication ou diffusion de contenu sponsorisé est effectuée sous la responsabilité du candidat et financée par la liste.
+    </div>
 </div>
+
+<!-- Bouton flottant -->
+<button id="btn-mentions" onclick="document.getElementById('mentions-legales').scrollIntoView({behavior: 'smooth'});">
+Mentions légales
+</button>
+
 </body>
 </html>
